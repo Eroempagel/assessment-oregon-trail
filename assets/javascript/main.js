@@ -1,3 +1,4 @@
+/*
 class Dog {
   constructor(name, breed) {
     this.name = name;
@@ -13,32 +14,50 @@ class Dog {
 }
 // create an instance of the Dog class
 const fluffy = new Dog("Fluffy", "Toy Poodle");
-
+*/
 class Traveler {
-  constructor(name, food) {
+  constructor(name) {
     this.name = name;
-    this.food = food;
+    this.food = 1;
     this.isHealthy = true;
   }
   hunt() {
     // Increases the traveler's food by 2.
+    this.food += 2;
   }
   eat() {
     // Consumes 1 unit of the traveler's food. If the traveler doesn't have any food left to eat, the traveler is no longer healthy (set isHealthy to false).
+    if (this.food >= 1) {
+      this.food -= 1;
+    } else {
+      this.isHealthy = false;
+    }
   }
 }
 
 class Wagon {
-  constructor(capacity, passengers) {
+  constructor(capacity) {
     this.capacity = capacity;
-    this.passengers = passengers;
-    this.isHealthy = true;
+    this.passengers = []; // which is initially an empty array
   }
   getAvailableSeatCount() {
     // Returns the number of empty seats, determined by the capacity set when the wagon was created, subtracted by the number of passengers currently on board.
+    let availableSeats = 0;
+    let numTravelers = 0;
+    if (join(traveler)) {
+      numTravelers += 1;
+    }
+    availableSeats = capacity - numTravelers;
+    return availableSeats;
   }
   join(traveler) {
     // Adds the traveler to the wagon if there is space. If the wagon is already at maximum capacity, don't add them.
+    if (this.capacity >= 1) {
+      this.passengers.push(traveler);
+      this.capacity -= 1;
+    } else {
+      console.log("There isn't any more room in this wagon");
+    }
   }
   shouldQuarantine() {
     // Returns true if there is at least one unhealthy person in the wagon. Return false if not.
