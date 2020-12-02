@@ -45,11 +45,11 @@ class Wagon {
   getAvailableSeatCount() {
     // Returns the number of empty seats, determined by the capacity set when the wagon was created, subtracted by the number of passengers currently on board.
     let availableSeats = 0;
-    let numTravelers = 0;
+    //let numTravelers = 0;
     //if (join(traveler)) {
     //  numTravelers += 1;
     //}
-    availableSeats = this.capacity - numTravelers;
+    availableSeats = this.capacity //- numTravelers;
     return availableSeats;
   }
   join(traveler) {
